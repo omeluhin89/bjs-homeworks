@@ -11,8 +11,15 @@ function calculateQuadraticEquation(){
 }
 
 function getResult(a,b,c){
-    // код для задачи №1 писать здесь
-    //return x;
+    const D = Math.pow(b, 2) - (4 * a * c);
+    let x = [];
+    if (D === 0) {
+        x.push(-b / (2 * a));
+    } else if (D > 0) {
+        x.push((-b + Math.sqrt(D)) / 2 * a);
+        x.push((-b - Math.sqrt(D)) / 2 * a);
+    }
+    return x;
 }
 
 function calculateAverageRating(){
@@ -22,8 +29,16 @@ function calculateAverageRating(){
 }
 
 function getAverageMark(marks){
-    // код для задачи №2 писать здесь
-    //return averageMark;
+    if (marks.length > 5) {
+        console.log(`В массиве, кол-во оценок больше 5, лишние оценки будут удалены!`)
+        marks = marks.slice(0, 5);
+    }
+    let sumMarks = 0;
+    for(let mark of marks) {
+        sumMarks += mark;
+    }
+    const averageMark = sumMarks / marks.length;
+    return averageMark;
 }
 
 function calculateDrinkTask(){
@@ -34,7 +49,15 @@ function calculateDrinkTask(){
 }
 
 function askDrink(name,dateOfBirthday){
-    // код для задачи №3 писать здесь
-    //console.log(result)
-    //return result;
+    const yearToday = (new Date).getFullYear();
+    dateOfBirthday = dateOfBirthday.getFullYear();
+    const ageUser = yearToday - dateOfBirthday;
+    if (ageUser >= 18) {
+        const result = `Не желаете ли олд-фэшн, ${name}?`;
+        console.log(result);
+    } else {
+        const result = `Сожалею, ${name}, но я не могу вам продать алкоголь. Зато могу предложить вам замечательный клюквенный компот!`;
+        console.log(result);
+    }
+    return result;
 }
