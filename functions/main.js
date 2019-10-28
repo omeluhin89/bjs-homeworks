@@ -60,7 +60,7 @@ function getAverageMark(marks){
     return average;
 }
 
-getAverageScore({algebra:[1,2,3,4,5,6], geometry:[1,2,3,4,5,]});
+console.log(getAverageScore({algebra:[1,2,3,4,5,6], geometry:[1,2,3,4,5,]}));
 
 /*Задание 3*/
 function getPersonData(secretData) {

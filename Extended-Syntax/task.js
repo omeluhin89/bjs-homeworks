@@ -1,4 +1,4 @@
-
+"use strict";
 
 function calculateQuadraticEquation(){
     let a = +window.a.value;
@@ -49,15 +49,16 @@ function calculateDrinkTask(){
 }
 
 function askDrink(name,dateOfBirthday){
-    const yearToday = (new Date).getFullYear();
-    dateOfBirthday = dateOfBirthday.getFullYear();
-    const ageUser = yearToday - dateOfBirthday;
-    if (ageUser >= 18) {
-        const result = `Не желаете ли олд-фэшн, ${name}?`;
-        console.log(result);
+    const yearToday = Date.now();
+    dateOfBirthday = +new Date(dateOfBirthday);
+    console.log(`${yearToday}   ${dateOfBirthday}`)
+    const differenceAge = yearToday - dateOfBirthday;
+    let ageDate = new Date(differenceAge);
+    let result = Math.abs(ageDate.getUTCFullYear() - 1970);
+    if (result >= 18) {
+        console.log(`Не желаете ли олд-фэшн, ${name}?`);
     } else {
-        const result = `Сожалею, ${name}, но я не могу вам продать алкоголь. Зато могу предложить вам замечательный клюквенный компот!`;
-        console.log(result);
+        console.log(`Сожалею, ${name}, но я не могу вам продать алкоголь. Зато могу предложить вам замечательный клюквенный компот!`);
     }
     return result;
 }

@@ -1,9 +1,10 @@
+"use strict";
+
 function calculateMortgage() {
     let percent = window.percent.value;
     let contribution = window.contribution.value;
     let amount = window.amount.value;
     let date = window.date.value;
-
     let result = calculateTotalMortgage(percent, contribution, amount, date);
     let span = window.mortageResult;
     span.textContent = result;
@@ -35,13 +36,9 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
     let dateEndCredit = +new Date(date);
     const dateNow = Date.now();
     let quantityMonth = ((dateEndCredit - dateNow) / (3600 * 24 * 1000 * 30)).toFixed();
-
-    //let diff = new Date(date);
-    console.log(quantityMonth);
-
     const sumReturnBank = Number(amount) - Number(contribution);
     const P = (percent/100) / 12;
-    const pay = sumReturnBank * (P + P / (((1 + P) ** quantityMonth) -1));
+    const pay = sumReturnBank * (P + P / (((1 + P) ** quantityMonth) - 1));
     const totalSum = contribution + sumReturnBank + (pay * quantityMonth) - amount;
     const totalAmount = Number(totalSum.toFixed(2));
     console.log(totalAmount);
