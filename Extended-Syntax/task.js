@@ -51,7 +51,6 @@ function calculateDrinkTask(){
 function askDrink(name,dateOfBirthday){
     const yearToday = Date.now();
     dateOfBirthday = +new Date(dateOfBirthday);
-    console.log(`${yearToday}   ${dateOfBirthday}`)
     const differenceAge = yearToday - dateOfBirthday;
     let ageDate = new Date(differenceAge);
     let result = Math.abs(ageDate.getUTCFullYear() - 1970);
