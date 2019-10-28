@@ -10,8 +10,6 @@ function checkBirthday(birthday) {
     // код для задачи №1 писать здесь
     const now = Date.now();
     birthday = +new Date(birthday);
-    console.log(birthday);
-    console.log(typeof birthday);
     const diff = now - birthday;
     const age = diff / 31622400000;
     if (age >= 18) {
