@@ -8,6 +8,17 @@ function initCheckBirthday() {
 
 function checkBirthday(birthday) {
     // код для задачи №1 писать здесь
+    const now = Date.now();
+    birthday = +new Date(birthday);
+    console.log(birthday);
+    console.log(typeof birthday);
+    const diff = now - birthday;
+    const age = diff / 31622400000;
+    if (age >= 18) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 function initPrintAnimalSound() {
@@ -21,6 +32,13 @@ function initPrintAnimalSound() {
 }
 
 function getAnimalSound(animal) {
+    if (typeof animal === 'undefined') {
+        return null;
+    }
+    let sound = animal.sound;
+    if (typeof animal !== 'undefined') {
+        return sound;
+    }
     // код для задачи №2 писать здесь
 }
 
@@ -36,4 +54,11 @@ function initCalculateStatement() {
 
 function getAverageMark(marks) {
     // код для задачи №3 писать здесь
+    let sumMarks = 0;
+    for (let mark of marks) {
+        sumMarks += Number(mark);
+    }
+    const average = sumMarks / marks.length;
+    const roundedAverage = Math.round(average);
+    return roundedAverage;
 }
