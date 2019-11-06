@@ -56,11 +56,11 @@ function sayHello() {
 
 function getGreeting(name) {
     let greeting;
-    if (Boolean(name)){
-        greeting = `Привет, мир! Меня зовут ${name}`;
+    if (name === 'undefined' || name === 'null' || Boolean(name) === false) {
+        greeting = `Привет, мир! Меня зовут Аноним`;
         console.log(greeting);
     } else {
-        greeting = `Привет, мир! Меня зовут Аноним`;
+        greeting = `Привет, мир! Меня зовут ${name}`;
         console.log(greeting);
     }
     return greeting
