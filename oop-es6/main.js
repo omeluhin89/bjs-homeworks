@@ -1,3 +1,6 @@
+"use strict";
+
+/*Задание 1*/
 class Weapon {
     constructor(name, attack, durability, range) {
         this.name = name;
@@ -29,6 +32,29 @@ class Weapon {
             return false;
         } else {
             return true;
+        }
+    }
+}
+
+/*Задание 2*/
+
+class StudentLog {
+    constructor(name) {
+        this.name = name;
+    }
+
+    getName() {
+        return this.name;
+    }
+
+    addGrade(grade, subject) {
+        this.subject = [];
+        if (!(grade <=5 && grade > 0)){
+            console.log(`Вы пытались поставить оценку \"${grade}\" по предмету \"${subject}\". Допускаются только числа от 1 до 5.`);
+            return this.subject.length;
+        } else {
+            this.subject.push(grade);
+            return this.subject.length;
         }
     }
 }
