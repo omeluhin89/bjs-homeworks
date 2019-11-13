@@ -35,6 +35,131 @@ class Weapon {
         }
     }
 }
+const arm = new Weapon('Рука', 1, Infinity, 1);
+console.log(arm);
+const bow = new Weapon('Лук', 10, 200, 3);
+console.log(bow);
+const sword = new Weapon('Меч', 25, 500, 1);
+console.log(sword);
+const knife = new Weapon('Нож', 5, 300, 1);
+console.log(knife);
+const staff = new Weapon('Посох', 8, 300, 2);
+console.log(staff);
+const longBow = new Weapon('Длинный лук', 15, bow.durability, 4);
+console.log(longBow);
+const axe = new Weapon('Секира', 27, 800, sword.range);
+console.log(axe);
+const staffStorm = new Weapon('Посох Бури', 10, staff.durability, 3);
+console.log(staffStorm);
+
+
+/*Задание 2*/
+
+class Bow extends Weapon{
+    constructor (){
+        super()
+        this.name = 'Лук';
+        this.attack = 10;
+        this.durability = 200;
+        this.range = 3;
+        this.startDurability = this.durability;
+    }
+}
+
+class Arm extends Weapon{
+    constructor (){
+        super()
+        this.name = 'Рука';
+        this.attack = 1;
+        this.durability = Infinity;
+        this.range = 1;
+        this.startDurability = this.durability;
+    }
+}
+
+class Sword extends Weapon{
+    constructor (){
+        super()
+        this.name = 'Меч';
+        this.attack = 25;
+        this.durability = 500;
+        this.range = 1;
+        this.startDurability = this.durability;
+    }
+}
+
+class Knife extends Weapon{
+    constructor (){
+        super()
+        this.name = 'Нож';
+        this.attack = 5;
+        this.durability = 300;
+        this.range = 1;
+        this.startDurability = this.durability;
+    }
+}
+
+class Staff extends Weapon{
+    constructor (){
+        super()
+        this.name = 'Посох';
+        this.attack = 8;
+        this.durability = 300;
+        this.range = 2;
+        this.startDurability = this.durability;
+    }
+}
+
+class BowLong extends Bow{
+    constructor (){
+        super()
+        this.name = 'Длинный Лук';
+        this.attack = 15;
+        this.range = 4;
+        this.startDurability = this.durability;
+    }
+}
+
+class Axe extends Sword{
+    constructor (){
+        super()
+        this.name = 'Секира';
+        this.attack = 27;
+        this.durability = 800;
+        this.startDurability = this.durability;
+    }
+}
+
+class StormStaff extends Staff{
+    constructor (){
+        super()
+        this.name = 'Посох бури';
+        this.attack = 10;
+        this.range = 3;
+        this.startDurability = this.durability;
+    }
+}
+
+/*Закомментил чтобы можно было вначале первое задание проверить
+* а то переменные также назвал*/
+// const bow = new Bow();
+// const sword = new Sword();
+// const arm = new Arm();
+// const knife = new Knife;
+// const staff = new Staff();
+// const bowLong = new BowLong();
+// const axe = new Axe();
+// const stormStaff = new Staff();
+//
+// console.log(bow);
+// console.log(arm);
+// console.log(sword);
+// console.log(knife);
+// console.log(staff);
+// console.log(bowLong);
+// console.log(axe);
+// console.log(stormStaff);
+
 
 /*Задание 3*/
 
